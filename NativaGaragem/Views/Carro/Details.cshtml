@@ -1,0 +1,57 @@
+﻿@model NativaGaragem.Models.Carro
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Carro</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Modelo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Modelo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Montadora)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Montadora)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Placa)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Placa)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Ano)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Ano)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Garagem.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Garagem.Nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Cliente.Endereco)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cliente.Endereco)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.IDCarro }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

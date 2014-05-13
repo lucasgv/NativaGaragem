@@ -1,0 +1,45 @@
+﻿@model NativaGaragem.Models.Realizacao
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Realizacao</legend>
+
+        @Html.HiddenFor(model => model.IDRealizacao)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IDLimpeza, "Limpeza")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IDLimpeza", String.Empty)
+            @Html.ValidationMessageFor(model => model.IDLimpeza)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IDFuncionario, "Funcionario")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IDFuncionario", String.Empty)
+            @Html.ValidationMessageFor(model => model.IDFuncionario)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

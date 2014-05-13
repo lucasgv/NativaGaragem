@@ -1,0 +1,43 @@
+﻿@model NativaGaragem.Models.Vaga
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Vaga</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IDCarro, "Carro")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IDCarro", String.Empty)
+            @Html.ValidationMessageFor(model => model.IDCarro)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IDGaragem, "Garagem")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IDGaragem", String.Empty)
+            @Html.ValidationMessageFor(model => model.IDGaragem)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
