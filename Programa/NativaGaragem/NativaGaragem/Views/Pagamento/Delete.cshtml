@@ -1,0 +1,53 @@
+﻿@model NativaGaragem.Models.Pagamento
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Pagamento</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FormaPagamento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FormaPagamento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataPagamento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataPagamento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataVencimento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataVencimento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Valor)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Valor)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Cliente.Endereco)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cliente.Endereco)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

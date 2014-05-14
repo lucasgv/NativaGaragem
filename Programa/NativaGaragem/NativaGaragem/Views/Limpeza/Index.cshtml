@@ -1,0 +1,63 @@
+﻿@model IEnumerable<NativaGaragem.Models.Limpeza>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Valor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StatusAprovacao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataSolicitacao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataExecucao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SituacaoExecucao)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tipo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Valor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StatusAprovacao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataSolicitacao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataExecucao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SituacaoExecucao)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDLimpeza }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDLimpeza }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDLimpeza })
+        </td>
+    </tr>
+}
+
+</table>

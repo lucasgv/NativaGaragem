@@ -1,0 +1,69 @@
+﻿@model NativaGaragem.Models.Pagamento
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Pagamento</legend>
+
+        @Html.HiddenFor(model => model.IDPagamento)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FormaPagamento)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FormaPagamento)
+            @Html.ValidationMessageFor(model => model.FormaPagamento)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DataPagamento)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DataPagamento)
+            @Html.ValidationMessageFor(model => model.DataPagamento)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DataVencimento)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DataVencimento)
+            @Html.ValidationMessageFor(model => model.DataVencimento)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Valor)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Valor)
+            @Html.ValidationMessageFor(model => model.Valor)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IDCliente, "Cliente")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IDCliente", String.Empty)
+            @Html.ValidationMessageFor(model => model.IDCliente)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

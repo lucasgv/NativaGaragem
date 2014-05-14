@@ -1,0 +1,50 @@
+﻿@model NativaGaragem.Models.Pagamento
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Pagamento</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FormaPagamento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FormaPagamento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataPagamento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataPagamento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataVencimento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataVencimento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Valor)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Valor)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Cliente.Endereco)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cliente.Endereco)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.IDPagamento }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

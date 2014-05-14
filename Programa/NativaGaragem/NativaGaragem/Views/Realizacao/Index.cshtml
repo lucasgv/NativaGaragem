@@ -1,0 +1,39 @@
+﻿@model IEnumerable<NativaGaragem.Models.Realizacao>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Limpeza.Tipo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Funcionario.Categoria)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Limpeza.Tipo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Funcionario.Categoria)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDRealizacao }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDRealizacao }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDRealizacao })
+        </td>
+    </tr>
+}
+
+</table>

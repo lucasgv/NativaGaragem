@@ -1,0 +1,29 @@
+﻿@model NativaGaragem.Models.Funcionario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Funcionario</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Categoria)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Categoria)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Usuario.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Usuario.Nome)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.IDFuncionario }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
