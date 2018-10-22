@@ -18,8 +18,7 @@ namespace NativaGaragem.Models
         [Key]
         public long IDSolicitacao { get; set; }
         public long IDLimpeza { get; set; }
-        public long IDCarro { get; set; }
-    
+        public long IDCarro { get; set; }    
         public virtual Carro Carro { get; set; }
         public virtual Limpeza Limpeza { get; set; }
     }
